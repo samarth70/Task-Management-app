@@ -1,0 +1,154 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f2c808050ad, pid=13339, tid=16281
+#
+# JRE version: OpenJDK Runtime Environment (11.0.7+10) (build 11.0.7+10-post-Ubuntu-2ubuntu219.10)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.7+10-post-Ubuntu-2ubuntu219.10, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x30ad]
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/sam/Desktop/ntcc/src/package/core.13339)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-lts
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: ntccproj
+
+Host: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz, 8 cores, 7G, Ubuntu 19.10
+Time: Sun May 10 22:59:38 2020 +0545 elapsed time: 36873 seconds (0d 10h 14m 33s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f2c0805f800):  JavaThread "XToolkt-Shutdown-Thread" [_thread_in_vm, id=16281, stack(0x00007f2c38b27000,0x00007f2c38c28000)]
+
+Stack: [0x00007f2c38b27000,0x00007f2c38c28000],  sp=0x00007f2c38c245c0,  free space=1013k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x30ad]
+C  [libjimage.so+0x3da2]
+C  [libjimage.so+0x42b1]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x57f141]
+V  [libjvm.so+0x5818f1]
+V  [libjvm.so+0xceb2cd]
+V  [libjvm.so+0xce9e5a]
+V  [libjvm.so+0xcea41e]
+V  [libjvm.so+0x572d71]
+V  [libjvm.so+0x57c0a5]
+V  [libjvm.so+0x57c539]
+V  [libjvm.so+0x9e1159]
+V  [libjvm.so+0x58193e]
+V  [libjvm.so+0xceb2cd]
+V  [libjvm.so+0xce9e5a]
+V  [libjvm.so+0xcec41b]
+V  [libjvm.so+0x62f1ea]
+V  [libjvm.so+0xa0e4ca]
+V  [libjvm.so+0xa1515b]
+V  [libjvm.so+0x81d383]
+V  [libjvm.so+0x81d9f1]
+j  sun.awt.X11.XToolkit.lambda$init$0()V+0 java.desktop@11.0.7
+j  sun.awt.X11.XToolkit$$Lambda$10.run()V+4 java.desktop@11.0.7
+j  java.lang.Thread.run()V+11 java.base@11.0.7
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x823b79]
+V  [libjvm.so+0x8221ce]
+V  [libjvm.so+0x8cb101]
+V  [libjvm.so+0xd21f1f]
+V  [libjvm.so+0xd1e7f0]
+V  [libjvm.so+0xb8e7b6]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.awt.X11.XToolkit.lambda$init$0()V+0 java.desktop@11.0.7
+j  sun.awt.X11.XToolkit$$Lambda$10.run()V+4 java.desktop@11.0.7
+j  java.lang.Thread.run()V+11 java.base@11.0.7
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007f2c73922778
+
+Register to memory mapping:
+
+RAX=0x00000000000055d7 is an unknown value
+RBX=0x00007f2c38c24671 is pointing into the stack for thread: 0x00007f2c0805f800
+RCX=0x00007f2c38c24695 is pointing into the stack for thread: 0x00007f2c0805f800
+RDX=0x00000000000055d7 is an unknown value
+RSP=0x00007f2c38c245c0 is pointing into the stack for thread: 0x00007f2c0805f800
+RBP=0x00007f2c38c245e0 is pointing into the stack for thread: 0x00007f2c0805f800
+RSI=0x0 is NULL
+RDI=0x00007f2c8080a130: <offset 0x0000000000008130> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007f2c80802000
+R8 =0x00007f2c7390d01c is an unknown value
+R9 =0x00007f2c302afc20 points into unknown readable memory: 03 00 00 00 00 00 00 00
+R10=0x00007f2c81af3d28: <offset 0x0000000000e45d28> in /usr/lib/jvm/java-11-openjdk-amd64/lib/server/libjvm.so at 0x00007f2c80cae000
+R11=0x00007f2c38c257e8 is pointing into the stack for thread: 0x00007f2c0805f800
+R12=0x00000000000083ac is an unknown value
+R13=0x00007f2c38c24670 is pointing into the stack for thread: 0x00007f2c0805f800
+R14=0x0 is NULL
+R15=0x00007f2c3031cea0 points into unknown readable memory: 6a 61 76 61 2f 61 77 74
+
+
+Registers:
+RAX=0x00000000000055d7, RBX=0x00007f2c38c24671, RCX=0x00007f2c38c24695, RDX=0x00000000000055d7
+RSP=0x00007f2c38c245c0, RBP=0x00007f2c38c245e0, RSI=0x0000000000000000, RDI=0x00007f2c8080a130
+R8 =0x00007f2c7390d01c, R9 =0x00007f2c302afc20, R10=0x00007f2c81af3d28, R11=0x00007f2c38c257e8
+R12=0x00000000000083ac, R13=0x00007f2c38c24670, R14=0x0000000000000000, R15=0x00007f2c3031cea0
+RIP=0x00007f2c808050ad, EFLAGS=0x0000000000010246, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007f2c38c245c0)
+0x00007f2c38c245c0:   0000000000000000 00007f2c38c25708
+0x00007f2c38c245d0:   00007f2c7c022f20 00007f2c38c24670
+0x00007f2c38c245e0:   00007f2c38c24650 00007f2c80805da2
+0x00007f2c38c245f0:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007f2c808050ad)
+0x00007f2c80804fad:   f3 ff ff 44 03 65 90 e9 3f fe ff ff 0f 1f 80 00
+0x00007f2c80804fbd:   00 00 00 41 8b 10 41 89 55 00 41 8b 54 00 fc 41
+0x00007f2c80804fcd:   89 54 05 fc e9 82 fc ff ff 66 2e 0f 1f 84 00 00
+0x00007f2c80804fdd:   00 00 00 b9 0a 00 00 00 e9 f0 fc ff ff 41 0f b7
+0x00007f2c80804fed:   54 00 fe 66 41 89 54 05 fe e9 5d fc ff ff 0f 1f
+0x00007f2c80804ffd:   44 00 00 f3 0f 1e fa 0f b6 17 89 f0 89 f1 4c 8d
+0x00007f2c8080500d:   47 01 84 d2 74 1c 0f 1f 44 00 00 69 c9 93 01 00
+0x00007f2c8080501d:   01 49 83 c0 01 31 d1 41 0f b6 50 ff 84 d2 75 eb
+0x00007f2c8080502d:   89 c8 25 ff ff ff 7f c3 90 66 2e 0f 1f 84 00 00
+0x00007f2c8080503d:   00 00 00 f3 0f 1e fa 48 85 d2 0f 84 da 00 00 00
+0x00007f2c8080504d:   55 48 89 e5 41 55 41 54 41 89 cc 53 48 83 ec 08
+0x00007f2c8080505d:   85 c9 0f 84 ba 00 00 00 49 89 f5 48 8d 5e 01 0f
+0x00007f2c8080506d:   b6 36 49 89 d0 40 84 f6 0f 84 9d 00 00 00 48 89
+0x00007f2c8080507d:   d9 b8 93 01 00 01 0f 1f 44 00 00 69 d0 93 01 00
+0x00007f2c8080508d:   01 48 83 c1 01 40 0f b6 c6 0f b6 71 ff 31 d0 40
+0x00007f2c8080509d:   84 f6 75 e7 25 ff ff ff 7f 31 d2 41 f7 f4 89 d0
+0x00007f2c808050ad:   41 8b 34 80 48 8b 07 ff 50 20 85 c0 7f 15 74 62
+0x00007f2c808050bd:   f7 d0 41 89 c0 48 83 c4 08 44 89 c0 5b 41 5c 41
+0x00007f2c808050cd:   5d 5d c3 41 0f b6 4d 00 89 c6 84 c9 74 1b 0f 1f
+0x00007f2c808050dd:   44 00 00 69 f6 93 01 00 01 48 83 c3 01 31 ce 0f
+0x00007f2c808050ed:   b6 4b ff 84 c9 75 ec 89 f0 25 ff ff ff 7f 31 d2
+0x00007f2c808050fd:   48 83 c4 08 41 f7 f4 5b 41 5c 41 5d 5d 41 89 d0
+0x00007f2c8080510d:   44 89 c0 c3 0f 1f 80 00 00 00 00 b8 93 01 00 01
+0x00007f2c8080511d:   eb 87 41 b8 ff ff ff ff eb 9b 41 83 c8 ff 44 89
+0x00007f2c8080512d:   c0 c3 90 f3 0f 1e fa eb 1d 66 2e 0f 1f 84 00 00
+0x00007f2c8080513d:   00 00 00 0f b6 16 84 d2 74 13 38 c2 75 15 48 83
+0x00007f2c8080514d:   c7 01 48 83 c6 01 0f b6 07 84 c0 75 e6 48 89 f8
+0x00007f2c8080515d:   c3 66 90 31 c0 c3 90 66 66 2e 0f 1f 84 00 00 00
+0x00007f2c8080516d:   00 00 90 f3 0f 1e fa 48 85 f6 74 51 0f b6 06 84
+0x00007f2c8080517d:   c0 74 4a 0f b6 d0 83 e0 07 c1 fa 03 44 8d 50 01
+0x00007f2c8080518d:   0f b6 c0 41 89 d1 4c 8d 44 06 02 48 8d 56 01 31
+0x00007f2c8080519d:   c0 66 90 0f b6 0a 48 c1 e0 08 48 83 c2 01 48 09 
+
+
+Stack slot to memory mapping:
+stack at sp + 0 slots: 0x0 is NULL
+stack at sp + 1 slots: 0x00007f2c38c25708 is pointing into the stack for thread: 0x00007f2c0805f800
+stack at sp + 2 slots: 0x00007f2c7c022f20 points into unknown readable memory: f0 f3 3a 7c 2c 7f 00 00
+stack at sp + 3 slots: 0x00007f2c38c24670 is pointing into the stack for thread: 0x00007f2c0805f800
+stack at sp + 4 slots: 0x00007f2c38c24650 is pointing into the stack for thread: 0x00007f2c0805f800
+stack at sp + 5 slots: 0x00007f2c80805da2: <offset 0x0000000000003da2> in /usr/lib/jvm/java-11-openjdk-amd64/lib/libjimage.so at 0x00007f2c80802000
+stack at sp + 6 slots: 0x0 is NULL
+stack at sp + 7 slots: 0x0 is NULL
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007f2c0805ee10, length=16, elements={
+0x00007f2c7c121000
